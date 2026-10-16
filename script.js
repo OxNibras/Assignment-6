@@ -7,12 +7,9 @@ const loadCategories = () => {
     
 }
 const loadProducts = () => {
-    showSpinner()
     fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
-    .then(data => {
-        setTimeout(() => displayProducts(data),1000)
-    })
+    .then(data => displayProducts(data),1000)
     .catch(err => console.log(err))
     
 }
@@ -26,6 +23,8 @@ const loadCategoryProducts = (category) => {
     .catch(err => console.log(err))
     
 }
+let currentProducts = []
+
 const showSpinner = () => {
     const productCont = document.getElementById('products')
     productCont.innerHTML = `
@@ -39,15 +38,20 @@ const showCategories = (categories) => {
     categories.forEach(category => {
         const div =  document.createElement('div')
         div.innerHTML = `
-            <button data-category="${category}" class="btn btn-lg hover:bg-[#F9FAFB] hover:border-[#D1D5DB] hover:text-[#111827] items-center w-full bg-transparent rounded-lg text-slate-700 border py-7">${category} </button>
+            <button data-category="${category}" class="btn btn-lg items-center w-full rounded-lg border py-7">${category} </button>
         `
        div.querySelector('button').addEventListener('click', (e) => {
+      document.querySelectorAll('#categories button').forEach(b => {
+        b.classList.remove('bg-slate-800', 'text-white')
+      })
+      e.currentTarget.classList.add('bg-slate-800', 'text-white')
       loadCategoryProducts(e.currentTarget.dataset.category)
     })
       categoriesCont.appendChild(div)
     });
 }
 const displayProducts = (products) => {
+    currentProducts = products
     const productsCont = document.getElementById('products')
     productsCont.innerHTML = ''
     products.forEach(product => {
@@ -77,6 +81,11 @@ const displayProducts = (products) => {
     });
     
 }
+document.getElementById('sort-btn').addEventListener('click' , () => {
+    showSpinner()
+    const sorted = [...currentProducts].sort((a,b) => b.price - a.price)
+    setTimeout(() => displayProducts(sorted),1880)
+})
 loadCategories()
 loadProducts()
 
