@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c822e81059.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="imgbin_a60c30ab449422c9d444f27f3a9b58a1.png">
+    <style>
+        body {
+  font-family: 'Poppins', sans-serif;
+}
+    </style>
+</head>
+<body class="">
+    <header class="w-11/12 mx-auto">
+        <nav class="flex justify-between items-center mt-6 pb-18">
+            <div>
+                <h1 class="text-2xl font-bold">Shop<span class="text-orange-500">Ease</span></h1>
+            </div>
+            <div class="hidden md:flex">
+                <ul class="flex gap-13 font-medium text-gray-600">
+                    <a href=""><li>Home</li></a>
+                    <a href=""><li>Shop</li></a>
+                    <a href=""><li>Categories</li></a>
+                    <a href=""><li>Favorites</li></a>
+                    <a href=""><li>About</li></a>
+                </ul>
+            </div>
+            <div class="flex gap-7 items-center">
+                <a href=""><i class="fa-solid fa-magnifying-glass" style="color: rgb(31, 32, 32);"></i></a>
+                <a href="" class="hidden md:flex"><i class="fa-regular fa-heart" style="color: rgb(31, 32, 32);"></i></a>
+                <a href=""><i class="fa-regular fa-user" style="color: rgb(31, 32, 32);"></i></a>
+            </div>
+        </nav>
+        <div class="md:flex justify-between">
+          <div class="space-y-4 ">
+            <h4 class="font-semibold text-md text-gray-500">SHOP SMART · LIVE BETTER</h4>
+            <h1 class="texl-3xl md:text-4xl font-bold">Quality Products <br> for Every Part of Your Life</h1>
+            <p class="text-gray-500 font-medium">From the latest electronics to stylish fashion, home essentials, beauty <br> products and more — all in one place.</p>
+            <a href="#categories"><button class="btn bg-black btn-lg text-white text-sm py-3 hover:opacity-80 px-8 rounded-lg">Shop Now <i class="fa-solid fa-arrow-right-long"></i></button></a>
+          </div>
+          <div class="w-1/2 lg:flex items-start  lg:-translate-y-27 hidden ">
+            <img class="h-full object-cover w-full" src="Minimal_Tech_Lifestyle_Still_Life-removebg-preview.png" alt="">
+          </div>
+        </div>
+    </header>
+    <main class="w-11/12 mx-auto">
+        <section id="categories" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5 ">
+
+        </section>
+        <section class=" flex justify-center gap-4 flex-wrap">
+            <input class=" flex-1 py-2 px-6 rounded-lg border border-gray-300 " type="text" placeholder="Search for Products">
+            <button class="btn   py-7 bg-transparent  hover:border-[#D1D5DB] rounded-lg font-medium text-[#111827D] text-md border border-gray-300 px-10 tracking-wider"><svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down preview-icon"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg> Sort by Price</button>
+        </section>
+        <section id="products" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5 mt-7 ">
+
+        </section>
+        <section id="favorites" class="flex flex-wrap gap-4 min-h-20 rounded-xl p-2 border mb-60 border-gray-300">
+           
+        </section>
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
