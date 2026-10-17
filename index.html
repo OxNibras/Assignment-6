@@ -16,7 +16,7 @@
     </style>
 </head>
 <body class="">
-    <header class="w-11/12 mx-auto">
+    <header class="w-11/12 mx-auto ">
         <nav class="flex justify-between items-center mt-6 pb-18">
             <div>
                 <h1 class="text-2xl font-bold">Shop<span class="text-orange-500">Ease</span></h1>
@@ -30,10 +30,10 @@
                     <a href=""><li>About</li></a>
                 </ul>
             </div>
-            <div class="flex gap-7 items-center">
-                <a href=""><i class="fa-solid fa-magnifying-glass" style="color: rgb(31, 32, 32);"></i></a>
-                <a href="" class="hidden md:flex"><i class="fa-regular fa-heart" style="color: rgb(31, 32, 32);"></i></a>
-                <a href=""><i class="fa-regular fa-user" style="color: rgb(31, 32, 32);"></i></a>
+            <div class="flex gap-7 items-center ">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#favorites" class="hidden md:flex"><i class="fa-regular fa-heart"></i></a>
+                <a href=""><i class="fa-regular fa-user" ></i></a>
             </div>
         </nav>
         <div class="md:flex justify-between">
@@ -41,27 +41,77 @@
             <h4 class="font-semibold text-md text-gray-500">SHOP SMART · LIVE BETTER</h4>
             <h1 class="texl-3xl md:text-4xl font-bold">Quality Products <br> for Every Part of Your Life</h1>
             <p class="text-gray-500 font-medium">From the latest electronics to stylish fashion, home essentials, beauty <br> products and more — all in one place.</p>
-            <a href="#categories"><button class="btn bg-black btn-lg text-white text-sm py-3 hover:opacity-80 px-8 rounded-lg">Shop Now <i class="fa-solid fa-arrow-right-long"></i></button></a>
+            <a href="#categories"><button class="btn mb-5 bg-black btn-lg text-white text-sm py-3 hover:opacity-80 px-8 rounded-lg">Shop Now <i class="fa-solid fa-arrow-right-long"></i></button></a>
           </div>
-          <div class="w-1/2 lg:flex items-start  lg:-translate-y-27 hidden ">
-            <img class="h-full object-cover w-full" src="Minimal_Tech_Lifestyle_Still_Life-removebg-preview.png" alt="">
+          <div class="w-1/2 lg:flex items-start  hidden ">
+            <img class="h-full object-cover w-full  lg:-translate-y-20" src="Minimal_Tech_Lifestyle_Still_Life-removebg-preview.png" alt="">
           </div>
         </div>
     </header>
     <main class="w-11/12 mx-auto">
-        <section id="categories" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5 ">
+        <section id="categories" class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-5 ">
 
         </section>
         <section class=" flex justify-center gap-4 flex-wrap">
-            <input class=" flex-1 py-2 px-6 rounded-lg border border-gray-300 " type="text" placeholder="Search for Products">
+            <input id="search-input" class=" flex-1 py-2 px-6 rounded-lg border border-gray-300 " type="text" placeholder="Search for Products">
             <button id="sort-btn" class="btn   py-7 bg-transparent  hover:border-[#D1D5DB] rounded-lg font-medium text-[#111827D] text-md border border-gray-300 px-10 tracking-wider"><svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down preview-icon"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg> Sort by Price</button>
         </section>
+        
         <section id="products" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-5 mt-7 ">
 
         </section>
+         <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-bold">Favorites</h2>
+
+    <button
+      id="clear-btn"
+      class="flex items-center gap-2 px-4 py-2 text-sm font-medium
+             text-gray-500 border border-gray-200 rounded-lg
+             hover:text-red-500 hover:border-red-300
+             transition-all duration-200 active:scale-94 active:bg-red-100">
+      <i class="fa-regular fa-trash-can"></i>
+      Clear All
+    </button>
+  </div>
+
         <section id="favorites" class="flex flex-wrap gap-4 min-h-20 rounded-xl p-2 border mb-60 border-gray-300">
            
         </section>
+        
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle pb-0">
+  <div class="modal-box pb-0">
+   <div id="modal-content">
+
+   </div>
+    <div class="modal-action">
+      <!-- <form method="dialog">
+        <button class="btn">Close</button>
+      </form> -->
+      <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost  fixed right-2 top-2 ">✕</button>
+    </form>
+    </div>
+  </div>
+</dialog>
+<dialog id="buyModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box text-center">
+    <div class="w-16 h-16 mx-auto mb-4 rounded-full 
+              bg-green-100 flex items-center justify-center">
+    <i class="fa-solid fa-check text-green-600 text-2xl"></i>
+  </div>
+
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">
+    Thanks for buying!
+  </h2>
+
+  <p class="text-sm text-gray-500 mb-6">
+    Your order has been placed successfully.
+  </p>
+
+  <span id="countdown-cont" class="font-semibold text-gray-600 text-3xl">3</span>
+  
+  </div>
+</dialog>
     </main>
 
 
