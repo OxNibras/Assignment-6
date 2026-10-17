@@ -108,7 +108,7 @@ const displayProducts = (products) => {
     </div>
     <h2 class="text-lg font-semibold">$${product.price}</h2>
     <div class="flex gap-2 w-full">
-      <button onclick="addToFavorites('${product.image}')" class="tracking-wider hover:border-red-300 hover:bg-red-50 active:scale-90 hover:text-red-500 btn transition-all duration-260 rounded-lg bg-white text-gray-700 border border-gray-200"><i class="fa-regular fa-heart heart"></i></button>
+      <button id="heart-btn" onclick="addToFavorites('${product.image}', this)" class="tracking-wider  hover:bg-gray-50 active:scale-90  btn transition-all duration-260 rounded-lg bg-white text-gray-700 border border-gray-200"><i class="fa-regular fa-heart heart"></i></button>
       <button onclick="loadDetails(${product.id})" class="active:scale-97  transition-all duration-200 btn flex-1 rounded-lg border border-gray-200 tracking-wider bg-white">Details</button>
       <button onclick="showBought(this)" class="btn active:scale-97 border-none  transition-all duration-200  tracking-wide  flex-1 rounded-lg bg-slate-900 text-white hover:opacity-80">Buy</button>
     </div>
@@ -162,7 +162,12 @@ const showBought = event => {
 loadCategories()
 loadProducts()
 
-const addToFavorites = (image) => {
+const addToFavorites = (image, btn) => {
+    const icon = btn.querySelector('.heart')
+    icon.classList.remove('fa-regular') 
+    icon.classList.add('fa-solid') 
+    
+       
     const favorites = document.getElementById('favorites')
     
     const item = document.createElement('div')
@@ -177,4 +182,17 @@ const addToFavorites = (image) => {
 }
 document.getElementById('clear-btn').addEventListener('click', () => {
     document.getElementById('favorites').innerHTML = ''
+
+     const allHeartButtons = document.querySelectorAll('#heart-btn')
+  
+     
+   allHeartButtons.forEach(btn => {
+    const icon = btn.querySelector('.heart')
+    
+    
+      icon.classList.remove('fa-solid')
+      icon.classList.add('fa-regular')
+      
+    
+})
 })
